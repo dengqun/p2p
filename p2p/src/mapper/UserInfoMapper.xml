@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的,例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+-->
+<mapper namespace="com.fzm.mapper.UserMapper"> 
+	<select id="queryTokenByUid" parameterType="java.util.Map" resultType="com.fzm.entity.User">
+		select * from p2p_user
+		<if test="type!=null and type!=''">
+			<where>
+				type = #{type} and (name = #{param} or phone = #{param} or email = #{param} or uid = #{param})
+			</where>
+		</if>
+		
+			
+		
+	</select>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的,例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+-->
+<mapper namespace="com.fzm.mapper.TokenUserMapper"> 
+  	<!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复,使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型,resultType="me.gacl.domain.User"就表示将查询结果封装成一个User类的对象返回,User类就是users表所对应的实体类
+    -->  
+    <!-- 根据用户名和密码核对用户信息 -->
+    <!-- <select id="vliUser" parameterType="java.util.Map" resultType="com.fuzamei.cgb.model.TokenUser">
+		select * from token_user
+		<where>
+			name = #{name} and password = #{password}
+		</where>
+	</select>  -->
+	<insert id="insertTokenRecords" parameterType="com.fzm.entity.TokenUser">
+		insert into p2p_token_user(uid,token,random) values(#{uid},#{token},#{random})
+	</insert>
+	<select id="queryTokenByUid" parameterType="int" resultType="com.fzm.entity.TokenUser">
+		select * from p2p_token_user where uid = #{uid}
+	</select>
+	<select id = "verificationToken"  parameterType="int" resultType = "com.fzm.entity.TokenUser">
+		select * from p2p_token_user where uid = #{uid}
+	</select>
+	<update id="updateToken" parameterType="com.fzm.entity.TokenUser">
+		update p2p_token_user set token = #{token} where uid = #{uid}
+	</update>
+	<select id="vaToken" parameterType="java.util.Map" resultType="com.fzm.entity.TokenUser">
+		select * from p2p_token_user where uid = #{uid}
+	</select>
+</mapper>

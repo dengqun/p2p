@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzm.daointerface.RecordIDao">
+    
+    <select id="selRecord" resultType="java.util.Map" parameterType="int">
+    	SELECT
+			r.rid,
+			r.rMoney,
+			r.type,
+			r.rechargeDate,
+			r.fulfilDate,
+			r.action,
+			r.HASH 
+		FROM
+			p2p_record r
+			LEFT JOIN p2p_user u ON r.uid = u.uid 
+		WHERE
+			r.uid = #{0} 
+			AND r.type = '充值' 
+		ORDER BY
+			r.rid DESC 
+			LIMIT #{1},#{2}
+    </select>
+    <select id="selURecord" resultType="java.util.Map" parameterType="int">
+    	SELECT
+			r.rid,
+			r.rMoney,
+			u.bankNo,
+			r.rechargeDate,
+			r.fulfilDate,
+			r.action,
+			r.HASH 
+		FROM
+			p2p_record r
+			LEFT JOIN p2p_user u ON r.uid = u.uid 
+		WHERE
+			r.uid = #{0} 
+			AND r.type = '提现' 
+		ORDER BY
+			r.rid DESC 
+			LIMIT #{1},#{2}
+    </select>
+    
+    <select id="intCount" resultType="int" parameterType="int">
+    	SELECT
+			count( * ) 
+		FROM
+			p2p_record r
+			LEFT JOIN p2p_user u ON r.uid = u.uid
+		WHERE
+			r.uid = #{0} 
+			AND r.type = '充值'
+    </select>
+    
+    <select id="intCounts" resultType="int" parameterType="int">
+    	SELECT
+			count( * ) 
+		FROM
+			p2p_record r
+			LEFT JOIN p2p_user u ON r.uid = u.uid 
+		WHERE
+			r.uid = #{0} 
+			AND r.type = '提现'
+    </select>
+</mapper>

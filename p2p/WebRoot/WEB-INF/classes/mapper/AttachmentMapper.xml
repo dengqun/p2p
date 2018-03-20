@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzm.dao.AttachmentDao">
+	
+	<insert id="insertAttachment" parameterType="com.fzm.entity.AttachmentVO" useGeneratedKeys="true" keyProperty="id">
+		insert into p2p_attachment (type,url,name,relationid,descri,createuser,modifyuser,createtime,modifytime,status,ordernum) values 
+		(#{type},#{url},#{name},#{relationid},#{descri},#{createuser},#{modifyuser},#{createtime},#{modifytime},#{status},#{ordernum})
+	</insert>
+	
+	<update id="updateAttachment" parameterType="com.fzm.entity.AttachmentVO">
+		update p2p_attachment set relationid = #{relationid} where id = ${attachmentid}
+	</update>
+	
+	<insert id="insertAttachment1" parameterType="com.fzm.entity.AttachmentVO" useGeneratedKeys="true" keyProperty="id">
+		insert into p2p_attachment (type,url,name,relationid,descri,createuser,modifyuser,createtime,modifytime,status,ordernum) values 
+		(#{type},#{url},#{name},#{relationid},#{descri},#{createuser},#{modifyuser},#{createtime},#{modifytime},#{status},#{ordernum})
+	</insert>
+	
+	<update id="updateAttachment1" parameterType="com.fzm.entity.AttachmentVO">
+		update p2p_attachment set relationid = #{relationid} where id = ${attachmentid}
+	</update>
+	
+	<select id="selectAttachment" resultType="java.util.Map" parameterType="java.lang.String">
+		select url,name,descri from p2p_attachment where relationid =#{uid} and descri  is not NULL
+	</select>
+</mapper>

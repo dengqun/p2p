@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzm.daointerface.InvestIDao">
+	<insert id="insertInvest" parameterType="com.fzm.entity.InvestVO">
+		INSERT INTO p2p_invest 
+			( invest_uid, invest_prooducet_id, investMoney, investDate, invest_stateNo, 
+				invest_eRevenue, invest_scale )
+		VALUES
+			(#{uid},#{producet_id},#{investMoney},now(),
+				#{ufsid},#{ieRevenue},#{scale})
+	</insert>
+	
+	<update id="updObtain" parameterType="com.fzm.entity.InvestVO">
+		UPDATE p2p_invest 
+		SET invest_obtain = #{obtain} 
+		WHERE
+			invest_uid = #{uid} 
+			AND invest_producet_id = #{producet_id}
+	</update>
+	
+	<select id="getInvestInfo" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select invest_uid from p2p_invest where invest_producet_id=#{producet_id}
+	</select>
+	
+	<select id="getProducetCountById" resultType="java.lang.Integer" 
+		parameterType="com.fzm.entity.InvestVO">
+		select count(*) from p2p_invest where invest_producet_id=#{producet_id} and invest_uid = #{uid}
+	</select>
+	
+	<update id="updInvestStateNo" parameterType="com.fzm.entity.InvestVO">
+		update  p2p_invest set invest_stateNo=#{invest_stateNo} where invest_producet_id=#{producet_id}
+	</update>
+	
+	<update id="updScale" parameterType="com.fzm.entity.InvestVO">
+		update  p2p_invest set invest_scale=#{scale} where invest_uid=#{uid} and invest_producet_id=#{producet_id}
+	</update>
+	
+	<select id="selectInvest" resultType="com.fzm.entity.InvestVO" 
+		parameterType="com.fzm.entity.InvestVO">
+		select * from p2p_invest where invest_uid=#{uid} and invest_producet_id=#{producet_id}
+	</select>
+	
+	<select id="findProducetScale" resultType="double"
+		parameterType="com.fzm.entity.InvestVO">
+		SELECT
+			sum( invest_scale ) AS invest_scale 
+		FROM
+			p2p_invest 
+		WHERE
+			producet_id = #{producet_id} 
+			AND invest_uid != #{uid}
+	</select>
+	
+	
+	<select id="selectUserUid" parameterType="java.lang.String" resultType="int">
+		select invest_uid from p2p_invest where producet_id=#{producet_id}
+	</select>
+	
+	<select id="selectUserMsg" parameterType="int" resultType="java.util.Map">
+		select investMoney from p2p_invest where invest_uid =#{uid}
+	</select>
+	
+	<update id="updHash" parameterType="com.fzm.entity.InvestVO">
+		update  p2p_invest set hash=#{hash} where invest_uid=#{uid} and invest_producet_id=#{producet_id}
+	</update>
+</mapper>

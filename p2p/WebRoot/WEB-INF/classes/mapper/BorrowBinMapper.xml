@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzm.daointerface.BorrowIDao">
+	<select id="getBorrowInfo" resultType="java.util.Map" parameterType="java.lang.String">
+		select b.borId,u.name,u.credit,b.borUse,b.borMoney from p2p_borrow b left join p2p_user u on b.borrow_uid = u.uid where b.borId in (
+			SELECT borrow_id from p2p_borrow_producet where producet_id=#{producet_id}
+		)
+	</select>
+	
+	<select id="findBorrowInfo" resultType="int" parameterType="java.lang.String">
+		select count(*) from p2p_borrow where borId in(
+			select borrow_id from p2p_borrow_producet where producet_id=#{producet_id}
+		) and borState != 6
+	</select>
+	
+	<select id="findBorrowList" resultType="int" parameterType="java.lang.String">
+		select borId from p2p_borrow where borid in(
+			select borrow_id from p2p_borrow_producet where producet_id=#{producet_id}
+		)
+	</select>
+	
+	<select id="findBorrowBorMoney" resultType="com.fzm.entity.BorrowVO" parameterType="int">
+		select * from p2p_borrow where borId = #{borId}
+	</select>
+	
+	
+	<select id="selectUserBorId" resultType="int" parameterType="java.lang.String">
+		select borrow_id from p2p_borrow_producet where producet_id=#{producet_id}
+	</select>
+	
+	<select id="selectBorrowUserMsg" resultType="java.util.Map" parameterType="int">
+		select borrow_uid,borMoney,borrow_repayMoney from p2p_borrow where borId = #{borId}
+	</select>
+	
+	<update id="updBorrowUserBorState" parameterType="int">
+		update p2p_borrow set borState = 8 where borId=#{borId}
+	</update>
+	
+	<update id="updateRepayMoney" parameterType="com.fzm.entity.BorrowVO">
+		update p2p_borrow set borrow_repayMoney = #{repayMoney} where borId = #{borId}
+	</update>
+	
+	<select id="selUid" parameterType="int" resultType="int">
+		select borrow_uid from p2p_borrow where borId = #{borId}
+	</select>
+	
+	<select id="selCountBorMoney" parameterType="java.lang.String" resultType="int">
+		select count(*) from p2p_borrow where borId in (
+			select borrow_id form p2p_borrow_producet where producet_id=#{producet_id}
+		) and borState = 6
+	</select>
+	
+	<select id="selBorMoney" parameterType="java.lang.String" resultType="int">
+		select * from p2p_borrow where borId in (
+			select borId form p2p_borrow_producet where producet_id=#{producet_id}
+		) and borState = 6
+	</select>
+</mapper>

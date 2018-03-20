@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzm.daointerface.ProducetIDao">
+	<select id="getProducet" resultType="java.util.Map" 
+		parameterType="int">
+		SELECT
+			DISTINCT(p.pid),
+			p.producet_name,
+			p.producet_money,
+			p.producet_rate,
+			p.producet_startDate,
+			p.producet_deadline,
+			p.producet_stateNo,
+			p.producet_amount,
+			p.producet_dateDue,
+			( p.producet_raiseprocess * 100 ) AS producet_raiseprocess,
+			p.producet_minMoney,
+			p.hash
+		FROM
+			p2p_producet p
+			LEFT JOIN p2p_invest i ON i.invest_producet_id = p.pid 
+		WHERE
+			p.pid NOT in (SELECT invest_producet_id FROM p2p_invest WHERE invest_uid = #{0})
+			AND p.producet_stateNo = 3 
+		ORDER BY
+			i.investid DESC
+		limit #{1},#{2}
+	</select>
+	
+	<select id="getProducetByPid" resultType="java.util.Map" parameterType="int">
+		SELECT
+			p.pid,
+			p.producet_name,
+			p.producet_money,
+			i.investMoney,
+			p.producet_deadline,
+			p.producet_rate,
+			p.producet_startDate,
+			p.producet_dateDue,
+			( p.producet_raiseprocess * 100 ) AS producet_raiseprocess,
+			i.invest_eRevenue,
+			i.invest_obtain,
+			i.invest_stateNo,
+			i.hash
+		FROM
+			p2p_producet p
+			LEFT JOIN p2p_invest i ON p.pid = i.invest_producet_id 
+		WHERE
+			i.invest_uid = #{0}
+			<if test="invest_stateNo=0"> 
+				AND i.invest_stateNo !=6
+			</if> 
+			<if test="invest_stateNo=5"> 
+				AND i.invest_stateNo!=5 and i.invest_stateNo!=6
+			</if> 
+		ORDER BY
+			i.investid DESC 
+			LIMIT #{1},#{2}
+	</select>
+	
+	<update id="updProducetByPid" parameterType="com.fzm.entity.ProducetVO">
+		UPDATE p2p_producet 
+		SET producet_stateNo = #{stateNo} 
+		WHERE
+			pid = #{pid}
+	</update>
+	
+	<insert id="insProducet" parameterType="com.fzm.entity.ProducetVO">
+		insert into p2p_producet
+			(pid,producet_name,producet_money,producet_rate,producet_startDate,
+				producet_deadline,producet_stateNo,producet_dateDue,producet_minMoney) 
+				
+		values(#{fid},#{fiName},#{money},${rate},#{startDate},
+				#{deadline},#{stateNo},#{dateDue},#{minMoney})
+	</insert>
+	
+	<update id="findProducetUpdAmount" parameterType="com.fzm.entity.ProducetVO">
+		update p2p_producet set producet_amount = #{amount} where pid = #{pid}
+	</update>
+	
+	<update id="findProducetUpdRaise" parameterType="com.fzm.entity.ProducetVO">
+		UPDATE p2p_producet 
+		SET producet_raiseprocess = #{raiseprocess} 
+		WHERE
+			pid = #{pid}
+	</update>
+	
+	<select id="findProducet" resultType="java.util.Map" parameterType="java.lang.String">
+		SELECT
+			pid,
+			producet_name,
+			producet_money,
+			producet_rate,
+			producet_startDate,
+			producet_deadline,
+			producet_amount,
+			( producet_raiseprocess * 100 ) AS producet_raiseprocess,
+			producet_minMoney,
+		    hash 
+		FROM
+			p2p_producet 
+		WHERE
+			pid =#{pid}
+	</select>
+	
+	<select id="gainProducet" resultType="com.fzm.entity.ProducetVO" parameterType="java.lang.String">
+		select * from p2p_producet where pid=#{pid}
+	</select>
+	
+	<select id="intCount" resultType="int" parameterType="int">
+		select count(*) from p2p_producet  where pid  in (
+			select invest_producet_id from p2p_invest where invest_uid = #{0}
+		) and producet_stateNo=3
+	</select>
+	
+	<select id="intCounts" resultType="int" parameterType="int">
+		select count(*) from p2p_producet  where pid not in (
+			select invest_producet_id from p2p_invest where invest_uid = #{0}
+		) and producet_stateNo=3
+	</select>
+	
+	
+	<update id="updProducetState" parameterType="java.lang.String">
+		UPDATE p2p_producet 
+		SET producet_stateNo = 6 
+		WHERE
+			pid = #{pid}
+	</update>
+	
+	<select id="selectPid" resultType="java.lang.String">
+		SELECT
+			pid 
+		FROM
+			p2p_producet 
+		WHERE
+			producet_startDate = #{startDate} and producet_amount &lt; producet_money and producet_stateNo=3
+	</select>
+	
+	<select id="selectPidInfo" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT
+			pid 
+		FROM
+			p2p_producet 
+		WHERE
+			producet_startDate = #{startDate} and producet_stateNo = 4
+	</select>
+	
+	<select id="selectDuePid" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT e.* FROM(
+			SELECT
+				pid,
+				producet_name,
+				producet_money,
+				producet_rate,
+				producet_startDate,
+				producet_deadline,
+				producet_stateNo,
+				producet_amount,
+				producet_eRevenue,
+				DATE_ADD( producet_dateDue, INTERVAL 1 DAY ) AS producet_dateDue,
+				producet_raiseprocess,
+				producet_minMoney,
+				hash 
+			FROM
+				p2p_producet 
+			WHERE
+				DATE_ADD( producet_dateDue, INTERVAL 1 DAY ) = #{dateDue}
+				) e 
+	    WHERE
+	  		e.producet_stateNo =4
+	</select>
+</mapper>

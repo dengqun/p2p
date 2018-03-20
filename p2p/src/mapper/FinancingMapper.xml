@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FinancingMapper">
+    
+    
+    <select id="findFinByBor" resultType="java.lang.String" parameterType="com.fzm.entity.Borrow">
+    select producet_id from p2p_borrow_producet where borrow_id=#{borId}
+    </select>
+    
+  
+    <!-- <update id="updateState"  parameterType="com.fzm.entity.Financing">
+    update  Financing set stateNo=#{stateNo} where fid=#{fid}
+    </update> -->
+    
+
+    <select id="findById" resultType="com.fzm.entity.Financing" parameterType="com.fzm.entity.Financing">
+    select * from p2p_producet where pid=#{fid}
+    </select>
+    
+   <update id="updateErevenue"  parameterType="com.fzm.entity.Financing">
+    update  p2p_producet set producet_eRevenue=#{eRevenue} where pid=#{fid}
+    </update> 
+</mapper>

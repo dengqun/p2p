@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzm.dao.BorrowInter">
+<resultMap id="borrowResultMap" type="com.fzm.entity.Borrow">
+  <id property="borId" column="borId" />
+  <result property="borrow_interest" column="borrow_interest"/>
+  <result property="borrow_uid" column="borrow_uid"/>
+  <result property="borDate" column="borDate"/>
+  <result property="borMoney" column="borMoney"/>
+  <result property="borUse" column="borUse"/>
+  <result property="borState" column="borState"/>
+  <result property="borDeadline" column="borDeadline"/>
+  <result property="borrow_instalment" column="borrow_instalment"/>
+  <result property="borrow_startDate" column="borrow_startDate"/>
+  <result property="borrow_dateDue" column="borrow_dateDue"/>
+  <result property="borrow_mortgageNo" column="borrow_mortgageNo"/>
+  <result property="borrow_name" column="borrow_name"/>
+  <result property="borrow_repaymodel" column="borrow_repaymodel"/>
+  <result property="borrow_raiseprocess" column="borrow_raiseprocess"/>
+  <result property="borrow_repayMoney" column="borrow_repayMoney"/>
+  <result property="borrow_almoney" column="borrow_almoney"/>
+  <result property="producet_id" column="producet_id"/>
+  <result property="hash" column="hash"/>
+</resultMap>
+	
+	<select id="queryBorrowList" resultMap="borrowResultMap" parameterType="com.fzm.entity.User">
+    SELECT
+		t.* 
+	FROM
+	  (
+			SELECT
+				b.*,
+				bf.producet_id 
+			FROM
+				p2p_borrow b
+				LEFT JOIN p2p_borrow_producet bf 
+					   ON b.borId = bf.borrow_id 
+			WHERE
+		<if test="borrow_uid!=null">
+			b.borrow_uid = #{borrow_uid}
+		</if>
+	) AS t
+		LEFT JOIN p2p_producet f 
+		       ON t.producet_id = f.pid 
+	ORDER BY
+		borId DESC 
+    </select>
+    
+    <select id="queryAllBorrowList" resultType="java.lang.Integer" parameterType="com.fzm.entity.User">
+    SELECT count(*) from (select b.*,bf.producet_id from p2p_borrow b LEFT JOIN p2p_borrow_producet bf on b.borId=bf.borrow_id  
+    <where>
+	    <if test="borrow_uid!=null">
+			b.borrow_uid=#{uid}
+		</if>
+	</where>
+	) as t LEFT JOIN p2p_borrow_producet f on t.producet_id=f.producet_id
+    </select>
+</mapper>

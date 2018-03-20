@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BorMapper">
+	<!-- 根据用户用户Id查用户所有借款信息 -->
+	<select id="getTotalBor" resultType="com.fzm.entity.Borrow"
+		parameterType="com.fzm.entity.User">
+		select * from p2p_borrow where uid=#{uid}
+	</select>
+	<!-- 提交用户借款信 -->
+	<insert id="applyFor" parameterType="com.fzm.entity.Borrow" useGeneratedKeys="true" keyProperty="borId">
+		insert into p2p_borrow
+		(borrow_interest,borrow_uid,borDate,borMoney,borUse,borState,borrow_instalment,borrow_mortgageNo,borDeadline,borrow_name,borrow_repaymodel,borrow_repayMoney,hash)
+		values(#{interest},#{uid},#{borDate},#{borMoney},#{borUse},#{borState},#{instalment},#{mortgageNo},#{borDeadline},#{name},#{repaymodel},#{repayMoney},#{hash})
+	</insert>
+	<!-- 通过借款Id查询借款信息 -->
+	<select id="findById" resultType="com.fzm.entity.Borrow"
+		parameterType="com.fzm.entity.Borrow">
+		select * from p2p_borrow where borId=#{borId}
+	</select>
+	<!-- 通过借款的状态来查询借款 -->
+	<select id="findByState" resultType="com.fzm.entity.Borrow"
+		parameterType="com.fzm.entity.Borrow">
+		select * from p2p_borrow where borState=#{borState}
+	</select>
+	<!-- 通过借款产品查询该产品下的借款信息 -->
+	<select id="findByfid" resultType="com.fzm.entity.Borrow"
+		parameterType="com.fzm.entity.Financing">
+		select * from p2p_borrow_producet where producetid=#{fid}
+	</select>
+	<!-- 通过borid  查询 该借款用户uid -->
+	<select id="findUidByBorId" resultType="com.fzm.entity.Borrow"
+		parameterType="com.fzm.entity.Borrow">
+		select * from p2p_borrow where borId=#{borId}
+	</select>
+	<!--同意利率 更新状态 利率 起息日 -->
+	<update id="updateBor" parameterType="com.fzm.entity.Borrow">
+		update p2p_borrow set borrow_interest=#{interest},
+		borState=#{borState} where borId=#{borId}
+
+	</update>
+	<!--同意利率 更新状态 利率 起息日 -->
+	<update id="updateBorState" parameterType="com.fzm.entity.Borrow">
+		update p2p_borrow set borState=#{borState},borrow_almoney=#{almoney} where borId=#{borId}
+
+	</update>
+	<!--更新起息日 -->
+	<update id="updateStartDate" parameterType="com.fzm.entity.Borrow">
+		UPDATE p2p_borrow 
+		SET borrow_startDate = #{borrow_startDate},
+			borrow_dateDue = ( DATE_ADD( NOW(), INTERVAL borDeadline DAY ) ) 
+		WHERE
+			borId = #{borId}
+	</update>
+	
+	
+	<insert id="CreateB_Financing" parameterType="java.util.Map">
+		insert into p2p_borrow_producet(borId,producetid) values(#{borId},#{producetid})
+		
+	</insert>
+	
+
+</mapper>

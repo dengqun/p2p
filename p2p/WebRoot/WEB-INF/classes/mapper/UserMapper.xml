@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+
+<resultMap type="com.fzm.entity.User" id="userResultMap">
+  <id property="uid" column="uid" />
+  <result property="name" column="name"/>
+  <result property="phone" column="phone"/>
+  <result property="email" column="email"/>
+  <result property="password" column="password"/>
+  <result property="type" column="type"/>
+  <result property="bankNo" column="bankNo"/>
+  <result property="idNum" column="idNum"/>
+  <result property="balance" column="balance"/>
+  <result property="creditNum" column="creditNum"/>
+  <result property="credit" column="credit"/>
+  <result property="regDate" column="regDate"/>
+  
+  <result property="borTotal" column="borTotal"/>
+  <result property="reTotal" column="reTotal"/>
+  <result property="bondHoldings" column="bondHoldings"/>
+  <result property="availableCredit" column="availableCredit"/>
+  <result property="totalAssets" column="totalAssets"/>
+  
+   <result property="bankPhone" column="bankPhone"/>
+    <result property="bankName" column="bankName"/>
+</resultMap>
+    <!-- 根据用户用户Id查用户信息-->
+    <select id="findById" parameterType="com.fzm.entity.User" resultType="com.fzm.entity.User">
+        select  * from p2p_user where uid=#{uid}
+    </select>
+    <!-- 注册用户 手机号-->
+    <insert id="insertUserByPhone" parameterType="java.util.Map">
+    	insert into p2p_user(phone,password,type,regDate,creditNum,credit,flag,availableCredit)values(#{username},#{password},#{type},#{time},#{money},#{credit},#{flag},#{shenyukejie});
+    </insert>
+    <!-- 注册用户 邮箱-->
+    <insert id="insertUserByEmail" parameterType="java.util.Map">
+    	insert into p2p_user(email,password,type,regDate,creditNum,credit,flag,availableCredit)values(#{username},#{password},#{type},#{time},#{money},#{credit},#{flag},#{shenyukejie});
+    </insert>
+    <!-- 根据手机号好邮箱查询用户信息 -->
+    <select id="selectUserByPhoneAndEmail" parameterType="java.util.Map" resultType="com.fzm.entity.User">
+    	select * from p2p_user where phone = #{username} or email = #{username}
+    </select>
+    <!-- 根据用户名和密码核对用户信息 -->
+    <select id="vliUser1" parameterType="java.util.Map" resultType="com.fzm.entity.User">
+		select * from p2p_user
+		<where>
+			and (phone = #{name} or email = #{name}) and password = #{password} 
+		</where>
+	</select> 
+   
+    <!-- 
+    <insert id="add" parameterType="com.fzm.entity.User">
+    insert into user(name,phone,email,password,type,bankNo,idNum,balance,credit)
+     values(#{name},#{phone},#{email},#{password},#{type},#{bankNo},#{idNum},#{balance},#{credit});
+    </insert>
+     -->
+    <update id="updateUserAsset"  parameterType="com.fzm.entity.User">
+    update p2p_user set reTotal=#{reTotal}, borTotal=#{borTotal}, availableCredit=#{availableCredit} where uid=#{uid}
+    </update>
+     <update id="updateBalance"  parameterType="com.fzm.entity.User">
+    update p2p_user set balance=#{balance} ,totalAssets=#{totalAssets} where uid=#{uid}
+    </update>
+    <update id="updateUserFlag" >
+    	update p2p_user set flag = #{flag},randomNumber = #{randomNumber} where (phone = #{name} or email = #{name})
+    </update>
+    
+</mapper>
