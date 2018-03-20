@@ -1,0 +1,244 @@
+PLAIN
+K 19
+BlockChainUtil.java
+V 21
+file 7-296.0.r399/141
+K 15
+BorService.java
+V 22
+file 9d-80.0.r415/2950
+K 36
+InvestRegisterControllerService.java
+V 22
+file 5-249.0.r268/4718
+K 34
+UserRegisterControllerService.java
+V 21
+file 5-227.0.r400/142
+K 18
+borrowService.java
+V 22
+file 9g-80.0.r412/7042
+K 21
+financingService.java
+V 22
+file 9i-80.0.r412/7281
+K 19
+provingService.java
+V 22
+file 5-412.0.r412/7526
+K 11
+serviceImpl
+V 20
+dir 9o-80.0.r397/383
+K 16
+serviceInterface
+V 20
+dir 9s-80.0.r146/471
+END
+ENDREP
+id: 9c-80.0.r418/506
+type: dir
+pred: 9c-80.0.r415/3903
+count: 97
+text: 418 0 493 493 dd03beeefec45bcee2258b154857914a
+cpath: /p2p/src/com/fzm/service
+copyroot: 0 /
+
+PLAIN
+K 3
+cgb
+V 20
+dir 4-214.0.r275/768
+K 4
+cros
+V 23
+dir 7d-80.0.r80/3718967
+K 3
+dao
+V 21
+dir 7i-80.0.r415/2786
+K 5
+eddsa
+V 22
+dir 6-214.0.r214/64629
+K 6
+entity
+V 21
+dir 7w-80.0.r335/2185
+K 6
+filter
+V 23
+dir 8m-80.0.r80/3724489
+K 4
+http
+V 21
+dir 4-226.0.r226/6752
+K 11
+interceptor
+V 20
+dir 8q-80.0.r143/498
+K 3
+p2p
+V 21
+dir 8u-80.0.r402/3494
+K 7
+service
+V 20
+dir 9c-80.0.r418/506
+K 4
+task
+V 20
+dir 4-293.0.r338/457
+K 8
+theromus
+V 22
+dir d-214.0.r214/66005
+K 5
+tools
+V 20
+dir a0-80.0.r414/630
+K 3
+web
+V 20
+dir ag-80.0.r417/615
+END
+ENDREP
+id: 7b-80.0.r418/1209
+type: dir
+pred: 7b-80.0.r417/1318
+count: 258
+text: 418 671 525 525 1b6a7d00d725cf0e44f9c0c93ab9584d
+cpath: /p2p/src/com/fzm
+copyroot: 0 /
+
+PLAIN
+K 3
+fzm
+V 21
+dir 7b-80.0.r418/1209
+END
+ENDREP
+id: 79-80.0.r418/1422
+type: dir
+pred: 79-80.0.r417/1531
+count: 258
+text: 418 1370 39 39 7378eeeaf8be2205abaa4686f635dc8c
+cpath: /p2p/src/com
+copyroot: 0 /
+
+PLAIN
+K 18
+Mybatis-config.xml
+V 21
+file 2-205.0.r205/423
+K 3
+com
+V 21
+dir 79-80.0.r418/1422
+K 6
+config
+V 21
+dir 2-381.0.r382/2526
+K 5
+gfp2p
+V 22
+dir 2-215.0.r231/54342
+K 16
+log4j.properties
+V 20
+file as-80.0.r404/86
+K 6
+mapper
+V 21
+dir au-80.0.r410/1051
+K 19
+spring-database.xml
+V 20
+file bm-80.0.r411/47
+K 17
+spring-quartz.xml
+V 20
+file 2-294.0.r300/50
+K 14
+spring-web.xml
+V 20
+file bo-80.0.r291/46
+END
+ENDREP
+id: 78-80.0.r418/1989
+type: dir
+pred: 78-80.0.r417/2098
+count: 332
+text: 418 1578 398 398 84b07e725c06750f7602b4f6b4699d3c
+cpath: /p2p/src
+copyroot: 0 /
+
+PLAIN
+K 10
+.classpath
+V 23
+file 2-80.0.r80/3677557
+K 10
+.myeclipse
+V 22
+dir 5-80.0.r80/3677741
+K 11
+.mymetadata
+V 23
+file 6-80.0.r80/3677821
+K 8
+.project
+V 23
+file 8-80.0.r80/3678007
+K 9
+.settings
+V 22
+dir a-80.0.r80/3680782
+K 7
+WebRoot
+V 22
+dir u-80.0.r292/550940
+K 3
+src
+V 21
+dir 78-80.0.r418/1989
+END
+ENDREP
+id: 0-80.0.r418/2454
+type: dir
+pred: 0-80.0.r417/2563
+count: 336
+text: 418 2143 298 298 34440770d07dbc10e92df048be4ba8fb
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 20
+dir 0-80.0.r418/2454
+K 12
+开发文档
+V 22
+dir 0-155.0.r156/59837
+END
+ENDREP
+id: 0.0.r418/2699
+type: dir
+pred: 0.0.r417/2808
+count: 418
+text: 418 2602 84 84 2fd51f35e7fcbd9bb29e09f2ff1fb9df
+cpath: /
+copyroot: 0 /
+
+9k-80.0.r80/3728043 delete-file false false false /p2p/src/com/fzm/service/jsonToString.java
+
+9m-80.0.r172/3106 delete-file false false false /p2p/src/com/fzm/service/recordService.java
+
+9w-80.0.r189/2124 delete-file false false false /p2p/src/com/fzm/service/ufinancingService.java
+
+9y-80.0.r192/2360 delete-file false false false /p2p/src/com/fzm/service/userService.java
+
+
+2699 2836

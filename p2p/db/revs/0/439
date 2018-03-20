@@ -1,0 +1,252 @@
+PLAIN
+K 18
+AttachmentDao.java
+V 26
+file m-429.0-434.r434/5705
+K 14
+BorrowDao.java
+V 26
+file s-429.1-434.r434/5988
+K 16
+BorrowInter.java
+V 26
+file o-429.3-434.r434/6547
+K 17
+FinancingDao.java
+V 26
+file w-429.4-434.r434/6827
+K 14
+RecordDao.java
+V 24
+file a-429.6-434.r438/64
+K 13
+StateDao.java
+V 26
+file g-429.8-434.r434/7961
+K 12
+UserDao.java
+V 26
+file c-429.a-434.r434/8528
+K 21
+UserLoginDaoImpl.java
+V 26
+file q-429.c-434.r434/9082
+END
+ENDREP
+id: 7i-80.0.r439/444
+type: dir
+pred: 7i-80.0.r438/1344
+count: 68
+text: 439 0 431 431 71e8f8af11658fac837b0052176320e6
+cpath: /p2p/src/com/fzm/dao
+copyroot: 0 /
+
+PLAIN
+K 3
+cgb
+V 20
+dir 4-214.0.r275/768
+K 4
+cros
+V 23
+dir 7d-80.0.r80/3718967
+K 3
+dao
+V 20
+dir 7i-80.0.r439/444
+K 12
+daointerface
+V 26
+dir 8x-80.0-419.r434/12672
+K 5
+eddsa
+V 22
+dir 6-214.0.r214/64629
+K 6
+entity
+V 21
+dir 7w-80.0.r437/1696
+K 6
+filter
+V 23
+dir 8m-80.0.r80/3724489
+K 4
+http
+V 21
+dir 4-226.0.r226/6752
+K 11
+interceptor
+V 20
+dir 8q-80.0.r143/498
+K 7
+service
+V 22
+dir 9c-80.0.r434/14688
+K 4
+task
+V 22
+dir 4-293.0.r434/15251
+K 8
+theromus
+V 22
+dir d-214.0.r214/66005
+K 5
+tools
+V 20
+dir a0-80.0.r414/630
+K 3
+web
+V 22
+dir ag-80.0.r434/16939
+END
+ENDREP
+id: 7b-80.0.r439/1163
+type: dir
+pred: 7b-80.0.r438/2067
+count: 269
+text: 439 605 545 545 68e9de244e95662369019c007c8321d5
+cpath: /p2p/src/com/fzm
+copyroot: 0 /
+
+PLAIN
+K 3
+fzm
+V 21
+dir 7b-80.0.r439/1163
+END
+ENDREP
+id: 79-80.0.r439/1376
+type: dir
+pred: 79-80.0.r438/2281
+count: 269
+text: 439 1324 39 39 3f217529363ef592fc801a786d4b42f5
+cpath: /p2p/src/com
+copyroot: 0 /
+
+PLAIN
+K 18
+Mybatis-config.xml
+V 21
+file 2-205.0.r205/423
+K 3
+com
+V 21
+dir 79-80.0.r439/1376
+K 6
+config
+V 21
+dir 2-381.0.r382/2526
+K 5
+gfp2p
+V 22
+dir 2-215.0.r231/54342
+K 16
+log4j.properties
+V 20
+file as-80.0.r404/86
+K 6
+mapper
+V 21
+dir au-80.0.r410/1051
+K 19
+spring-database.xml
+V 20
+file bm-80.0.r411/47
+K 17
+spring-quartz.xml
+V 20
+file 2-294.0.r300/50
+K 14
+spring-web.xml
+V 20
+file bo-80.0.r291/46
+END
+ENDREP
+id: 78-80.0.r439/1943
+type: dir
+pred: 78-80.0.r438/2848
+count: 350
+text: 439 1532 398 398 b48d96e019130f6cf52add6b98e1f351
+cpath: /p2p/src
+copyroot: 0 /
+
+PLAIN
+K 10
+.classpath
+V 23
+file 2-80.0.r80/3677557
+K 10
+.myeclipse
+V 22
+dir 5-80.0.r80/3677741
+K 11
+.mymetadata
+V 23
+file 6-80.0.r80/3677821
+K 8
+.project
+V 23
+file 8-80.0.r80/3678007
+K 9
+.settings
+V 22
+dir a-80.0.r80/3680782
+K 7
+WebRoot
+V 22
+dir u-80.0.r292/550940
+K 3
+src
+V 21
+dir 78-80.0.r439/1943
+END
+ENDREP
+id: 0-80.0.r439/2408
+type: dir
+pred: 0-80.0.r438/3313
+count: 357
+text: 439 2097 298 298 1a634ce6e01e194f92a0cef55fc7f448
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 20
+dir 0-80.0.r439/2408
+K 12
+开发文档
+V 22
+dir 0-155.0.r156/59837
+END
+ENDREP
+id: 0.0.r439/2653
+type: dir
+pred: 0.0.r438/3558
+count: 439
+text: 439 2556 84 84 159d098d6bb4869172bc981bd60c3621
+cpath: /
+copyroot: 0 /
+
+u-429.2-434.r436/256 delete-file false false false /p2p/src/com/fzm/dao/BorrowDaoImpl.java
+
+7-429.5-434.r436/535 delete-file false false false /p2p/src/com/fzm/dao/FinancingDaoImpl.java
+
+e-429.7-434.r434/7676 delete-file false false false /p2p/src/com/fzm/dao/RecordDaoImpl.java
+
+k-429.9-434.r436/821 delete-file false false false /p2p/src/com/fzm/dao/UfinancingDaoImpl.java
+
+i-429.b-434.r434/8801 delete-file false false false /p2p/src/com/fzm/dao/UserDaoImpl.java
+
+9g-80.0-415.r422/903 delete-file false false false /p2p/src/com/fzm/dao/borrowDaoImpl.java
+
+9i-80.1-415.r422/1181 delete-file false false false /p2p/src/com/fzm/dao/financingDaoImpl.java
+
+9m-80.2-415.r422/1468 delete-file false false false /p2p/src/com/fzm/dao/recordDaoImpl.java
+
+9w-80.3-415.r422/1750 delete-file false false false /p2p/src/com/fzm/dao/ufinancingDaoImpl.java
+
+9y-80.4-415.r422/2040 delete-file false false false /p2p/src/com/fzm/dao/userDaoImpl.java
+
+
+2653 2790

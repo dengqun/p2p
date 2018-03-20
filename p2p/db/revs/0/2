@@ -1,0 +1,27 @@
+PLAIN
+END
+ENDREP
+id: 0.0.r2/17
+type: dir
+pred: 0.0.r1/2022510
+count: 2
+text: 2 0 4 4 2d2977d1c96f487abe4a1e202dd03b4e
+cpath: /
+copyroot: 0 /
+
+0-1.0.r1/1970266 delete-file false false false /.classpath
+
+3-1.0.r1/1970441 delete-dir false false false /.myeclipse
+
+4-1.0.r1/1970515 delete-file false false false /.mymetadata
+
+6-1.0.r1/1970692 delete-file false false false /.project
+
+8-1.0.r1/1973360 delete-dir false false false /.settings
+
+s-1.0.r1/2004335 delete-dir false false false /WebRoot
+
+6c-1.0.r1/2022086 delete-dir false false false /src
+
+
+17 142

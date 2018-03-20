@@ -1,0 +1,42 @@
+PLAIN
+K 10
+.classpath
+V 21
+file 2-3.0.r3/1978546
+K 11
+.mymetadata
+V 21
+file 6-3.0.r3/1978803
+K 8
+.project
+V 21
+file 8-3.0.r3/1978984
+END
+ENDREP
+id: 0-3.0.r75/144
+type: dir
+pred: 0-3.0.r74/182
+count: 56
+text: 75 0 131 131 6e6d9931f33217a17f442e59b437fc2e
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 17
+dir 0-3.0.r75/144
+END
+ENDREP
+id: 0.0.r75/329
+type: dir
+pred: 0.0.r74/367
+count: 75
+text: 75 281 35 35 303f671f2c87d1775ad966e9e96767f6
+cpath: /
+copyroot: 0 /
+
+u-3.0.r65/445901 delete-dir false false false /p2p/WebRoot
+
+
+329 459

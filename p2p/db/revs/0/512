@@ -1,0 +1,124 @@
+PLAIN
+END
+ENDREP
+id: 2-215.0.r512/17
+type: dir
+pred: 2-215.0.r511/164622
+count: 5
+text: 512 0 4 4 2d2977d1c96f487abe4a1e202dd03b4e
+cpath: /p2p/src/gfp2p
+copyroot: 0 /
+
+PLAIN
+K 18
+Mybatis-config.xml
+V 21
+file 2-205.0.r205/423
+K 3
+com
+V 21
+dir 79-80.0.r506/1772
+K 6
+config
+V 20
+dir 2-381.0.r507/364
+K 5
+gfp2p
+V 19
+dir 2-215.0.r512/17
+K 16
+log4j.properties
+V 20
+file as-80.0.r404/86
+K 6
+mapper
+V 21
+dir au-80.0.r505/1182
+K 19
+spring-database.xml
+V 21
+file bm-80.0.r479/247
+K 17
+spring-quartz.xml
+V 20
+file 2-294.0.r447/50
+K 14
+spring-web.xml
+V 20
+file bo-80.0.r485/49
+END
+ENDREP
+id: 78-80.0.r512/576
+type: dir
+pred: 78-80.0.r511/165192
+count: 420
+text: 512 168 395 395 e84acc4f513d3293754c46533effe5ff
+cpath: /p2p/src
+copyroot: 0 /
+
+PLAIN
+K 10
+.classpath
+V 20
+file 2-80.0.r509/242
+K 10
+.myeclipse
+V 22
+dir 5-80.0.r80/3677741
+K 11
+.mymetadata
+V 23
+file 6-80.0.r80/3677821
+K 8
+.project
+V 20
+file 8-80.0.r509/449
+K 9
+.settings
+V 22
+dir a-80.0.r80/3680782
+K 12
+.springBeans
+V 22
+file 1-508.0.r508/6593
+K 7
+WebRoot
+V 20
+dir u-80.0.r508/8304
+K 3
+src
+V 20
+dir 78-80.0.r512/576
+END
+ENDREP
+id: 0-80.0.r512/1078
+type: dir
+pred: 0-80.0.r511/165700
+count: 429
+text: 512 730 335 335 fb2daa1d9840a5c332e10e241ded8d86
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 20
+dir 0-80.0.r512/1078
+K 12
+开发文档
+V 21
+dir 0-155.0.r502/3333
+END
+ENDREP
+id: 0.0.r512/1323
+type: dir
+pred: 0.0.r511/165950
+count: 512
+text: 512 1227 83 83 dccf7ef69f0822f425b4f89a66880333
+cpath: /
+copyroot: 0 /
+
+3-511.0.r511/164361 delete-file false false false /p2p/src/gfp2p/Api.java
+
+
+1323 1462

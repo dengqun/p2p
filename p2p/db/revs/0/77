@@ -1,0 +1,34 @@
+PLAIN
+K 8
+.project
+V 21
+file 8-3.0.r3/1978984
+END
+ENDREP
+id: 0-3.0.r77/57
+type: dir
+pred: 0-3.0.r76/101
+count: 58
+text: 77 0 44 44 1ea3b1a03a56525f1c3209389f3eaa3e
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 16
+dir 0-3.0.r77/57
+END
+ENDREP
+id: 0.0.r77/238
+type: dir
+pred: 0.0.r76/284
+count: 77
+text: 77 191 34 34 22df4da4fb005fdc7f5c363deb24a977
+cpath: /
+copyroot: 0 /
+
+6-3.0.r3/1978803 delete-file false false false /p2p/.mymetadata
+
+
+238 368

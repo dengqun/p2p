@@ -1,0 +1,254 @@
+PLAIN
+K 17
+AttachmentVO.java
+V 20
+file 8-88.0.r109/228
+K 11
+Borrow.java
+V 21
+file 7x-80.0.r333/252
+K 13
+BorrowVO.java
+V 21
+file 5-435.0.r435/853
+K 14
+Financing.java
+V 19
+file 80-80.0.r90/71
+K 16
+FinancingVO.java
+V 22
+file 6-444.0.r444/1977
+K 17
+LoginMessage.java
+V 24
+file 82-80.0.r80/3721283
+K 13
+RecordVO.java
+V 21
+file 5-437.0.r437/756
+K 10
+State.java
+V 24
+file 84-80.0.r80/3721501
+K 14
+TokenUser.java
+V 24
+file 86-80.0.r80/3721712
+K 17
+UfinancingVO.java
+V 22
+file 8-444.0.r444/2188
+K 9
+User.java
+V 20
+file 88-80.0.r237/48
+K 18
+UserBackstage.java
+V 24
+file 8a-80.0.r80/3722138
+K 13
+UserInfo.java
+V 24
+file 8c-80.0.r80/3722357
+END
+ENDREP
+id: 7w-80.0.r486/640
+type: dir
+pred: 7w-80.0.r481/1424
+count: 25
+text: 486 0 627 627 5dd88d2f76488f8beae1ee27be5bf940
+cpath: /p2p/src/com/fzm/entity
+copyroot: 0 /
+
+PLAIN
+K 3
+cgb
+V 20
+dir 4-214.0.r275/768
+K 4
+cros
+V 23
+dir 7d-80.0.r80/3718967
+K 3
+dao
+V 21
+dir 7i-80.0.r464/2477
+K 12
+daointerface
+V 24
+dir 8x-80.0-419.r477/805
+K 5
+eddsa
+V 22
+dir 6-214.0.r214/64629
+K 6
+entity
+V 20
+dir 7w-80.0.r486/640
+K 6
+filter
+V 23
+dir 8m-80.0.r80/3724489
+K 4
+http
+V 21
+dir 4-226.0.r226/6752
+K 11
+interceptor
+V 20
+dir 8q-80.0.r143/498
+K 7
+service
+V 20
+dir 9c-80.0.r474/802
+K 4
+task
+V 21
+dir 4-293.0.r477/1355
+K 8
+theromus
+V 22
+dir d-214.0.r214/66005
+K 5
+tools
+V 20
+dir a0-80.0.r484/341
+K 3
+web
+V 20
+dir ag-80.0.r483/646
+END
+ENDREP
+id: 7b-80.0.r486/1355
+type: dir
+pred: 7b-80.0.r484/1056
+count: 310
+text: 486 804 538 538 16826ae40ac9dd4e71e521226a5ab759
+cpath: /p2p/src/com/fzm
+copyroot: 0 /
+
+PLAIN
+K 3
+fzm
+V 21
+dir 7b-80.0.r486/1355
+END
+ENDREP
+id: 79-80.0.r486/1568
+type: dir
+pred: 79-80.0.r484/1269
+count: 310
+text: 486 1516 39 39 5b9fcaba9255d0c370f68b809c37ca8d
+cpath: /p2p/src/com
+copyroot: 0 /
+
+PLAIN
+K 18
+Mybatis-config.xml
+V 21
+file 2-205.0.r205/423
+K 3
+com
+V 21
+dir 79-80.0.r486/1568
+K 6
+config
+V 21
+dir 2-381.0.r382/2526
+K 5
+gfp2p
+V 22
+dir 2-215.0.r231/54342
+K 16
+log4j.properties
+V 20
+file as-80.0.r404/86
+K 6
+mapper
+V 21
+dir au-80.0.r477/3538
+K 19
+spring-database.xml
+V 21
+file bm-80.0.r479/247
+K 17
+spring-quartz.xml
+V 20
+file 2-294.0.r447/50
+K 14
+spring-web.xml
+V 20
+file bo-80.0.r485/49
+END
+ENDREP
+id: 78-80.0.r486/2136
+type: dir
+pred: 78-80.0.r485/674
+count: 397
+text: 486 1724 399 399 e3ef6d11b3d04a931ec9533fa8c0c666
+cpath: /p2p/src
+copyroot: 0 /
+
+PLAIN
+K 10
+.classpath
+V 23
+file 2-80.0.r80/3677557
+K 10
+.myeclipse
+V 22
+dir 5-80.0.r80/3677741
+K 11
+.mymetadata
+V 23
+file 6-80.0.r80/3677821
+K 8
+.project
+V 23
+file 8-80.0.r80/3678007
+K 9
+.settings
+V 22
+dir a-80.0.r80/3680782
+K 7
+WebRoot
+V 22
+dir u-80.0.r292/550940
+K 3
+src
+V 21
+dir 78-80.0.r486/2136
+END
+ENDREP
+id: 0-80.0.r486/2600
+type: dir
+pred: 0-80.0.r485/1136
+count: 404
+text: 486 2289 298 298 fcfd2b2f1602e003e23c53737bafa157
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 20
+dir 0-80.0.r486/2600
+K 12
+开发文档
+V 22
+dir 0-155.0.r156/59837
+END
+ENDREP
+id: 0.0.r486/2845
+type: dir
+pred: 0.0.r485/1380
+count: 486
+text: 486 2748 84 84 08add3a7b16ed03b7538777912496bc5
+cpath: /
+copyroot: 0 /
+
+5-481.0.r481/530 delete-file false false false /p2p/src/com/fzm/entity/MessageVO.java
+
+
+2845 2982

@@ -1,0 +1,156 @@
+PLAIN
+K 9
+index.jsp
+V 24
+file 5o-80.0.r80/3709402
+K 3
+jsp
+V 23
+dir 5q-80.0.r80/3709878
+K 3
+lib
+V 22
+dir 5u-80.0.r86/191508
+K 9
+login.jsp
+V 24
+file 6k-80.0.r80/3715113
+K 7
+web.xml
+V 24
+file 6m-80.0.r80/3715321
+END
+ENDREP
+id: 14-80.0.r121/220
+type: dir
+pred: 14-80.0.r86/191941
+count: 2
+text: 121 0 207 207 1a88fa4a927e168abf82cea22ff367df
+cpath: /p2p/WebRoot/WEB-INF
+copyroot: 0 /
+
+PLAIN
+K 9
+Apply.jsp
+V 23
+file v-80.0.r80/3680919
+K 11
+BorMain.jsp
+V 23
+file y-80.0.r80/3681113
+K 8
+META-INF
+V 23
+dir 10-80.0.r80/3681577
+K 7
+WEB-INF
+V 20
+dir 14-80.0.r121/220
+K 7
+aaa.jsp
+V 24
+file 6o-80.0.r80/3715932
+K 9
+admin.jsp
+V 24
+file 6q-80.0.r80/3716128
+K 9
+dabao.jsp
+V 24
+file 6s-80.0.r80/3716327
+K 10
+iMoney.jsp
+V 24
+file 6u-80.0.r80/3716526
+K 9
+index.jsp
+V 24
+file 6w-80.0.r80/3716726
+K 9
+login.jsp
+V 24
+file 6y-80.0.r80/3716924
+K 11
+message.jsp
+V 24
+file 70-80.0.r80/3717124
+K 9
+money.jsp
+V 24
+file 72-80.0.r80/3717324
+K 8
+test.jsp
+V 24
+file 74-80.0.r80/3717522
+K 9
+touzi.jsp
+V 24
+file 76-80.0.r80/3717720
+END
+ENDREP
+id: u-80.0.r121/1009
+type: dir
+pred: u-80.0.r86/192739
+count: 2
+text: 121 381 615 615 e42d7a13c6b82329dbda8760e4ab690a
+cpath: /p2p/WebRoot
+copyroot: 0 /
+
+PLAIN
+K 10
+.classpath
+V 23
+file 2-80.0.r80/3677557
+K 10
+.myeclipse
+V 22
+dir 5-80.0.r80/3677741
+K 11
+.mymetadata
+V 23
+file 6-80.0.r80/3677821
+K 8
+.project
+V 23
+file 8-80.0.r80/3678007
+K 9
+.settings
+V 22
+dir a-80.0.r80/3680782
+K 7
+WebRoot
+V 20
+dir u-80.0.r121/1009
+K 3
+src
+V 21
+dir 78-80.0.r120/2229
+END
+ENDREP
+id: 0-80.0.r121/1472
+type: dir
+pred: 0-80.0.r120/2692
+count: 41
+text: 121 1163 296 296 4f832a8863f98443c4efd7b2d7f88a94
+cpath: /p2p
+copyroot: 0 /
+
+PLAIN
+K 3
+p2p
+V 20
+dir 0-80.0.r121/1472
+END
+ENDREP
+id: 0.0.r121/1670
+type: dir
+pred: 0.0.r120/2890
+count: 121
+text: 121 1619 38 38 e996e5046a29090c61a1c7485d8780a9
+cpath: /
+copyroot: 0 /
+
+15-80.0.r80/3709250 delete-dir false false false /p2p/WebRoot/WEB-INF/classes
+
+
+1670 1807
